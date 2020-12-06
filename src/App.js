@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Layout from "./HOC/Layouts/Layout";
+import BurgerBuilder from "./containers/BurgerBuilder/BurgerBuilder";
+import Checkout from "./containers/Checkout/Checkout";
+import { Route, Switch, withRouter } from "react-router-dom";
+import Orders from "./containers/Orders/Orders";
+import Auth from "./containers/Auth/Auth";
+import * as actions from "./store/actions/index";
+import { connect } from "react-redux";
 
-function App() {
+const app = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Layout>
+        <Switch>
+          <Route path="/checkout" component={Checkout}></Route>
+          <Route path="/orders" component={Orders}></Route>
+          <Route path="/auth" component={Auth}></Route>
+          <Route path="/" component={BurgerBuilder}></Route>
+        </Switch>
+      </Layout>
     </div>
   );
-}
+};
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    checkAuthState: dispatch(actions.checkAuthState()),
+  };
+};
+export default withRouter(connect(null, mapDispatchToProps)(app));

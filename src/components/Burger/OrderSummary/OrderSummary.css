@@ -1,0 +1,24 @@
+.Class{
+    text-align: center;
+    border:5px solid brown;
+}
+
+.Header {
+    color: brown;
+}
+
+.SummaryTable{
+    position: relative;
+    margin: 0 auto;
+    border: 1px solid gray;
+}
+
+ th{
+    border: 2px solid gray;
+    padding: 2px 2px 2px 2px;
+    margin: 10px;
+}
+
+tr > td{
+    text-transform: capitalize;
+}
