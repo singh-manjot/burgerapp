@@ -118,7 +118,7 @@ const ContactData = (props) => {
       orderData: formData,
     };
 
-    props.onOrder(orderObject, props.token);
+    props.onOrder(orderObject);
     props.history.replace("/");
   };
 
@@ -190,7 +190,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onOrder: (orderData, token) => dispatch(purchase(orderData, token)),
+    onOrder: (orderData) => dispatch(purchase(orderData)),
   };
 };
 

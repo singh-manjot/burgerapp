@@ -16,11 +16,11 @@ export const purchaseFail = (error) => {
   };
 };
 
-export const purchase = (orderData, token) => {
+export const purchase = (orderData) => {
   return (dispatch) => {
     dispatch(purchaseStart);
     axios
-      .post("/orders.json?auth=" + token, orderData)
+      .post("/orders.json", orderData)
       .then((response) => {
         dispatch(purchaseSuccess(response.data.name, orderData));
       })
