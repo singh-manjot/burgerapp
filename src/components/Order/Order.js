@@ -17,7 +17,7 @@ const order = (props) => {
         style={{
           textTransform: "capitalize",
           display: "inline-block",
-          margin: "0 8px",
+          margin: "0 10px",
           border: "1px solid #ccc",
           padding: "5px",
         }}
