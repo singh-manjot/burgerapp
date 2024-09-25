@@ -34,6 +34,7 @@ const BuildControl = (props) => {
       <button className={classes.More} onClick={props.added}>
         +
       </button>
+      <div className={labelClass}>(${props.price})</div>
     </div>
   );
 };

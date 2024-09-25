@@ -2,10 +2,10 @@ import React from "react";
 import classes from "./BuildControls.css";
 import BuildControl from "./BuildControl";
 const controls = [
-  { label: "Salad", type: "salad" },
-  { label: "Bacon", type: "bacon" },
-  { label: "Cheese", type: "cheese" },
-  { label: "Meat", type: "meat" },
+  { label: "Salad", type: "salad", price: 0.5 },
+  { label: "Bacon", type: "bacon", price: 1 },
+  { label: "Cheese)", type: "cheese", price: 1 },
+  { label: "Meat", type: "meat", price: 2 },
 ];
 const BuildControls = (props) => {
   return (
@@ -14,6 +14,7 @@ const BuildControls = (props) => {
         return (
           <BuildControl
             key={key}
+            price={control.price}
             label={control.label}
             added={() => props.ingredientAdder(control.type)}
             removed={() => props.ingredientRemover(control.type)}
